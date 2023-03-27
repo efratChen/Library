@@ -1,0 +1,28 @@
+<!-- option 1: -->
+<!-- <p [class.headerStyle] ="!isEmpty()">the {{examineeName}}'s quis</p> -->
+<!-- option 2: -->
+<p [style.fontSize.px]="fontSizeStyle()" [style.fontWeight]="fontWeightStyle()" [style.backgroundColor]="bColorStyle()">
+    the {{examineeName}}'s quis</p>
+
+<div>{{examineeInstructions}}</div>
+<!-- 2.+ -->
+<p *ngIf="isEmpty()">please enter your name</p>
+<!-- option 1: -->
+<!-- <p><input type="text" [(ngModel)]="examineeName" placeholder="enter your name" [class.inputStyle] ="isEmpty()"/></p> -->
+<!-- option 2: -->
+<p><input type="text" [(ngModel)]="examineeName" placeholder="enter your name" [style.backgroundColor]="inputStyle()" />
+</p>
+
+<p>your final mark is {{finalMark()}}</p>
+<input type="button" (click)="check()" value="show message" />
+<!-- 1.+ -->
+<p *ngFor="let q of arrQuestions">
+    <span><b>{{arrQuestions.indexOf(q)+1}}. </b></span>
+    <span>{{q}}</span>
+</p>
+<!-- 3.+ -->
+<div [ngSwitch]="finalMark()">
+    <p *ngSwitchCase=100>the maximum mark</p>
+    <p *ngSwitchCase=0>the minimum mark</p>
+    <p *ngSwitchDefault>the middle mark</p>
+</div>

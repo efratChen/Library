@@ -1,0 +1,11 @@
+.link {
+    width: 30.9%;
+    float: left;
+    padding: 15px;
+    background-color: gray;
+}
+
+a {
+    text-decoration-line: none;
+    color: black;
+}

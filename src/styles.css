@@ -1,0 +1,51 @@
+/* You can add global styles to this file, and also import other style files */
+.my-style{
+    color:blueviolet;
+}
+.efrat1{
+    color:deeppink;
+}
+html{
+    text-align: center;
+}
+/* משימה 3 שיעור 11-12
+
+*/
+.active{
+    color: grey;
+    font-size: smaller;
+    opacity: 0.5;
+}
+/* menu & subManagement components */
+.inline{
+    padding: 3vw;
+}
+.inline-flex{
+    display: inline-flex;
+}
+
+/* .img{
+    /* background-image: url("./assets//book.jpg"); */
+    /* background-color: rebeccapurple; */
+/* } */
+/* * {  */
+    /* background-image: url(./assets/book.jpg); */
+/* background-color: red; */
+/* mask-image: url(./assets/book.jpg); */
+/* list-style-image: url(./assets//book.jpg); */
+/* background-image: url("./assets/book.jpg"); */
+
+/* } */
+html {
+    /* color: saddlebrown; */
+  
+    background-image: url('./assets/book.jpg')  ;
+        
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    
+
+
+}

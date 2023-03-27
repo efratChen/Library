@@ -1,0 +1,29 @@
+.isLess {
+     color: grey;
+     font-style: italic;
+}
+
+.category_link {
+     display: inline-block;
+     cursor: pointer;
+     margin-left: auto;
+     margin-right: auto;
+     width: 10vw;
+     text-align: center;
+}
+
+#category_menu {
+     margin-top: 2vh;
+     margin-right: auto;
+     margin-left: auto;
+     width: 40vw;
+}
+
+* {
+     font-size: 1.8vh;
+}
+
+.active {
+     font-style: italic;
+     color: gray !important;
+}

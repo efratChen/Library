@@ -1,0 +1,6 @@
+<h1>{{b.title}}</h1>
+<p>{{b.author}}</p>
+<p>{{b.summary}}</p>
+
+<div *ngIf="b.pageCount > 400">The book is thickish</div>
+<div *ngIf="isOversubtle()">The book is oversubtle</div>

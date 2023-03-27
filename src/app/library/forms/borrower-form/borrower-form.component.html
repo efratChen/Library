@@ -1,0 +1,42 @@
+<form [formGroup]="borrowerForm" (ngSubmit)="submit()">
+
+    <p><input type="text" formControlName="tz" placeholder="enter tz"
+            [style.border]="borrowerForm.controls.tz.invalid&&borrowerForm.controls.tz.touched?'red 1px solid':''" />
+    </p>
+    <p *ngIf=borrowerForm.controls.tz.invalid&&borrowerForm.controls.tz.dirty>id must be at least 9 digits </p>
+
+    <p><input type="text" formControlName="firstName" placeholder="first name"
+            [style.border]="borrowerForm.controls.firstName.invalid&&borrowerForm.controls.firstName.touched?'red 1px solid':''" />
+    </p>
+    <p *ngIf=borrowerForm.controls.firstName.invalid&&borrowerForm.controls.firstName.dirty>first name must be at least
+        2 letters </p>
+
+    <p><input type="text" formControlName="lastName" placeholder="last name"
+            [style.border]="borrowerForm.controls.lastName.invalid&&borrowerForm.controls.lastName.touched?'red 1px solid':''" />
+    </p>
+    <p *ngIf=borrowerForm.controls.lastName.invalid&&borrowerForm.controls.lastName.dirty>last name must be at least 2
+        letters </p>
+
+    <p><input type="tel" formControlName="phoneNumber" placeholder="phone number"
+            [style.border]="borrowerForm.controls.phoneNumber.invalid&&borrowerForm.controls.phoneNumber.touched?'red 1px solid':''" />
+    </p>
+    <p *ngIf=borrowerForm.controls.phoneNumber.invalid&&borrowerForm.controls.phoneNumber.dirty>phone number must be at
+        least 3 digits </p>
+
+    <p><input type="email" formControlName="email" placeholder="email"
+            [style.border]="borrowerForm.controls.email.invalid&&borrowerForm.controls.email.touched?'red 1px solid':''" />
+    </p>
+    <p *ngIf=borrowerForm.controls.email.invalid&&borrowerForm.controls.email.dirty>adress mail is in valid</p>
+
+    <select formControlName="ageCategory">
+        <option *ngFor="let c of getAll" [style.backgroundColor]="c.color" [value]="c.id"
+            [style.border]="borrowerForm.controls.ageCategory.valid?'yellow 1px solid':'red 1px solid'"> {{c.name}}
+        </option>
+    </select>
+
+    <p *ngIf=borrowerForm.controls.ageCategory.invalid&&borrowerForm.controls.ageCategory.dirty>must choose age category
+    </p>
+
+    <p><input type="submit" [disabled]="!borrowerForm.valid" value="save" /></p>
+    <p>{{borrowerForm.value|json}}</p>
+</form>

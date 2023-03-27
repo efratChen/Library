@@ -1,0 +1,15 @@
+<div *ngFor="let bl of BorrowerList;index as i">
+    <b>{{i+1}}.</b>
+    <p>id: {{bl.id}}</p>
+    <p>tz: {{bl.tz}}</p>
+    <p>Name: {{bl.lastName}} {{bl.firstName}}</p>
+    <p *ngIf="bl.mail">
+        <a href="mailto:{{bl.mail}}.com? subject= 'hi'+ {{bl.firstName}}=message">press here to send a message</a>
+    </p>
+    <p *ngIf="!bl.mail && bl.phoneNumber">phoneNumber: {{bl.phoneNumber}}</p>
+
+</div>
+<p>first name has 2 names: show first name + first letter of the second name</p>
+<div *ngFor="let b of BorrowerList;index as i">
+    <p> <b>{{i+1}}. </b>Borower Name: {{b.firstName| name}}</p>
+</div>

@@ -1,0 +1,7 @@
+<app-category-list></app-category-list>
+<div *ngFor="let b of abooks| searchBook:searchBook ">
+  <span>{{b.title}} / {{b.author}} </span>
+</div>
+<span *ngIf="abooks.length == 0">there are no boooks in the list</span>
+<span *ngIf="abooks.length > 0"> total: {{abooks.length}} books in the list</span>
+<p><input type="text" [(ngModel)]="searchBook" placeholder="search" /></p>

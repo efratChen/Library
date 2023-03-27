@@ -1,0 +1,21 @@
+* {
+    vertical-align: top;
+}
+
+.must_return {
+    background-color: yellow;
+    border: red 0.8px solid;
+    width: 12vw;
+}
+
+.Lending_notes {
+    border: black solid 0.1px;
+    font-size: 1.8vh;
+    width: 28vw;
+    height: 23vh;
+    margin-top: 2.5vh;
+    margin-right: 1vw;
+    margin-left: 1vw;
+    padding: 2vh 1vw;
+    display: inline-block;
+}

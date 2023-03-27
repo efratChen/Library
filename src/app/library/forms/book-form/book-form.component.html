@@ -1,0 +1,27 @@
+<form #bookForm="ngForm" (ngSubmit)="submit()">
+        <p><input type="text" name="title" required pattern="^[a-zA-Z]{2,30}$" [(ngModel)]="b.title" placeholder="title"
+                        #title="ngModel" /> </p>
+        <p *ngIf="!title.valid">title must be at least 2 letters</p>
+
+        <p><input type="text" name="author" required pattern="^[a-zA-Z]{2,30}$" [(ngModel)]="b.author"
+                        placeholder="author" #author="ngModel" /> </p>
+        <p *ngIf="!author.valid">author name must be at least 2 letters</p>
+
+        <p><input type="text" name="summary" [(ngModel)]="b.summary" required pattern="^[a-zA-Z]{2,100}$"
+                        placeholder="summary" #summary="ngModel" /> </p>
+        <p *ngIf="!summary.valid">must insert summary</p>
+
+        <select name="ageCategory" [(ngModel)]="b.ageCategory" required placeholder="ageCategory"
+                #ageCategory="ngModel">
+                <option *ngFor="let c of categories" [style.backgroundColor]="c.color"> {{c.name}} </option>
+        </select>
+        <p *ngIf="!ageCategory.valid">must choose age category</p>
+
+        <p><input type="number" name="pageCount" [(ngModel)]="b.pageCount" required min="1" max="2000"
+                        placeholder="page count" #pageCount="ngModel" /> </p>
+        <p *ngIf="!pageCount.valid">must insert page count</p>
+
+        <input type="submit" value="send" [disabled]="!bookForm.valid" />
+        <p *ngIf="!bookForm.valid">the form is still in valid</p>
+
+</form>

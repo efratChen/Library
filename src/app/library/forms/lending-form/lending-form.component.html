@@ -1,0 +1,11 @@
+<p>borrower name:</p>
+<form [formGroup]="lendingForm" (ngSubmit)="submit()">
+    <select formControlName="borrower" [(ngModel)]="borrowerFull">
+        <option *ngFor="let b of borrowers" [value]="b.id">{{b.lastName}} {{b.firstName}}</option>
+    </select>
+    <p>book name:</p>
+    <select formControlName="book" [(ngModel)]="bookFull">
+        <option *ngFor="let b of books" [value]="b.id">{{b.title}}</option>
+    </select>
+    <input [disabled]="!bookFull || !borrowerFull" type="submit" value="ok" />
+</form>
